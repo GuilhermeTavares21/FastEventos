@@ -25,5 +25,12 @@ namespace FastEventos.API.Controllers
         {
             return  _context.Eventos;
         }
+
+        [HttpGet("{id}")]
+        public Evento GetById(int id)
+        {
+            
+            return _context.Eventos.FirstOrDefault( item => item.Id == id);
+        }
     }
 }
