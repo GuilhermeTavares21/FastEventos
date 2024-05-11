@@ -3,19 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Back", "Back", "{90597983-860B-4B2D-922B-AE568ECB747C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FastEventos.Application", "FastEventos.Application\FastEventos.Application.csproj", "{D7015BA1-2899-4E87-95F5-36FE05FB0A3C}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{26EDB29E-B403-41C3-9F21-4739A8411077}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FastEventos.Domain", "FastEventos.Domain\FastEventos.Domain.csproj", "{5C0C7F02-1DE8-4FCB-B6E1-AF3D8635BFD5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FastEventos.API", "Back\src\FastEventos.API\FastEventos.API.csproj", "{5BA319EA-531B-44BC-B48A-514339BD3E2E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FastEventos.Persistence", "FastEventos.Persistence\FastEventos.Persistence.csproj", "{538F67E1-FA7D-4553-8736-185B184ED711}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FastEventos.Application", "FastEventos.Application\FastEventos.Application.csproj", "{D7015BA1-2899-4E87-95F5-36FE05FB0A3C}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FastEventos.API", "FastEventos.API\FastEventos.API.csproj", "{604EC02A-B720-43B5-AFCC-1D1C758B658D}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FastEventos.Domain", "FastEventos.Domain\FastEventos.Domain.csproj", "{5C0C7F02-1DE8-4FCB-B6E1-AF3D8635BFD5}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FastEventos.Persistence", "FastEventos.Persistence\FastEventos.Persistence.csproj", "{538F67E1-FA7D-4553-8736-185B184ED711}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FastEventos.API", "FastEventos.API\FastEventos.API.csproj", "{CF23E53D-3FC5-4C2C-AB21-5F2B602DAF1A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,18 +17,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5BA319EA-531B-44BC-B48A-514339BD3E2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5BA319EA-531B-44BC-B48A-514339BD3E2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5BA319EA-531B-44BC-B48A-514339BD3E2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5BA319EA-531B-44BC-B48A-514339BD3E2E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D7015BA1-2899-4E87-95F5-36FE05FB0A3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D7015BA1-2899-4E87-95F5-36FE05FB0A3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D7015BA1-2899-4E87-95F5-36FE05FB0A3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D7015BA1-2899-4E87-95F5-36FE05FB0A3C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{604EC02A-B720-43B5-AFCC-1D1C758B658D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{604EC02A-B720-43B5-AFCC-1D1C758B658D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{604EC02A-B720-43B5-AFCC-1D1C758B658D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{604EC02A-B720-43B5-AFCC-1D1C758B658D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5C0C7F02-1DE8-4FCB-B6E1-AF3D8635BFD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5C0C7F02-1DE8-4FCB-B6E1-AF3D8635BFD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C0C7F02-1DE8-4FCB-B6E1-AF3D8635BFD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -43,13 +29,13 @@ Global
 		{538F67E1-FA7D-4553-8736-185B184ED711}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{538F67E1-FA7D-4553-8736-185B184ED711}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{538F67E1-FA7D-4553-8736-185B184ED711}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF23E53D-3FC5-4C2C-AB21-5F2B602DAF1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF23E53D-3FC5-4C2C-AB21-5F2B602DAF1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF23E53D-3FC5-4C2C-AB21-5F2B602DAF1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF23E53D-3FC5-4C2C-AB21-5F2B602DAF1A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{26EDB29E-B403-41C3-9F21-4739A8411077} = {90597983-860B-4B2D-922B-AE568ECB747C}
-		{5BA319EA-531B-44BC-B48A-514339BD3E2E} = {26EDB29E-B403-41C3-9F21-4739A8411077}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {91817413-B734-425B-BA36-2F8F35EF2B5E}
