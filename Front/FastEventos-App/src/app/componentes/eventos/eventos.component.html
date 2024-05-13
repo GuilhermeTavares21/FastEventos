@@ -1,4 +1,5 @@
-<h2>Eventos</h2>
+<app-titulo [titulo]="'Eventos'"></app-titulo>
+
 <hr>
 
 <div class="form-inline">
@@ -12,12 +13,16 @@
     >
 
 
-    <button *ngIf="isCollapsed" type="button" class="btn btn-primary marg" (click)="isCollapsed = !isCollapsed"
-        [attr.aria-expanded]="!isCollapsed" aria-controls="collapseBasic">Mostrar Imagem
+    <button *ngIf="isCollapsed" type="button" class="btn btn-sm marg btn-outline-secondary" (click)="isCollapsed = !isCollapsed"
+        [attr.aria-expanded]="!isCollapsed" aria-controls="collapseBasic" >
+        <i class="fa fa-eye"></i>
+        Mostrar Imagem
     </button>
 
-    <button *ngIf="!isCollapsed" type="button" class="btn btn-primary marg" (click)="isCollapsed = !isCollapsed"
-        [attr.aria-expanded]="!isCollapsed" aria-controls="collapseBasic">Esconder Imagem
+    <button *ngIf="!isCollapsed" type="button" class="btn btn-sm marg btn-outline-secondary" (click)="isCollapsed = !isCollapsed"
+        [attr.aria-expanded]="!isCollapsed" aria-controls="collapseBasic">
+        <i class="fa fa-eye-slash"></i>
+        Esconder Imagem
     </button>
 
   </div>
@@ -51,10 +56,14 @@
       <td>{{evento.local}}</td>
       <td>{{evento.dataEvento}}</td>
       <td>{{evento.qtdPessoas}}</td>
-      <td>{{evento.lote}}</td>
+      <td>{{evento.lotes}}</td>
       <td>
-        <button type="button" class="btn btn-primary btn-sm me-2">Editar</button>
-        <button type="button" class="btn btn-danger btn-sm">Excluir</button>
+        <button type="button" class="btn btn-primary btn-sm me-2" >
+          <i class="fa fa-edit"></i>
+        </button>
+        <button type="button" class="btn btn-danger btn-sm" (click)="openModal(template)">
+          <i class="fa fa-trash"></i>
+        </button>
       </td>
     </tr>
   </tbody>
@@ -66,3 +75,11 @@
     </tr>
   </tfoot>
 </table>
+
+<ng-template #template>
+  <div class="modal-body text-center">
+    <p>Tem certeza que quer deletar este evento?</p>
+    <button type="button" class="btn btn-default" (click)="confirm()" >Sim</button>
+    <button type="button" class="btn btn-primary" (click)="decline()" >Não</button>
+  </div>
+</ng-template>
