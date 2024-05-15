@@ -9,36 +9,72 @@
 
 	<div class="col-md-6">
 
-		<form class="p-1">
+		<form class="p-1" [formGroup]="form">
       <div class="pb-2 d-block d-md-none">
         <h3 class="border-bottom">Cadastro de Usuário</h3>
       </div>
       <div class="form-row">
         <div class="form-group col-sm-6">
           <label>Primeiro Nome</label>
-          <input type="text" class="form-control" placeholder="Insira o Primeiro nome" />
+          <input type="text"
+          [ngClass]="{'is-invalid': f.primeiroNome?.errors && f.primeiroNome?.touched}"
+          formControlName="primeiroNome" class="form-control" placeholder="Insira o Primeiro nome" />
+          <div class="invalid-feedback" *ngIf="f.primeiroNome?.hasError('required')">
+            Campo obrigatório.
+          </div>
         </div>
         <div class="form-group col-sm-6">
           <label>Último nome</label>
-          <input type="text" class="form-control" placeholder="Insira o Último nome" />
+          <input type="text"
+          [ngClass]="{'is-invalid': f.ultimoNome?.errors && f.ultimoNome?.touched}"
+          formControlName="ultimoNome" class="form-control" placeholder="Insira o Último nome" />
+          <div class="invalid-feedback" *ngIf="f.ultimoNome?.hasError('required')">
+            Campo obrigatório.
+          </div>
         </div>
       </div>
       <div class="form-group">
         <label for="">Email:</label>
-        <input class="form-control" type="text" placeholder="Insira o Nome Completo" />
+        <input
+        [ngClass]="{'is-invalid': f.email?.errors && f.email?.touched}"
+        formControlName="email" class="form-control" type="text" placeholder="Insira o Nome Completo" />
+        <div class="invalid-feedback" *ngIf="f.email?.hasError('email')">
+          Formato inválido de email.
+        </div>
+        <div class="invalid-feedback" *ngIf="f.email?.hasError('required')">
+          Campo obrigatório.
+        </div>
       </div>
       <div class="form-group">
         <label for="">Usuario:</label>
-        <input class="form-control" type="text" placeholder="Insira o nome de Usuário" />
+        <input
+        [ngClass]="{'is-invalid': f.userName?.errors && f.userName?.touched}"
+        formControlName="userName" class="form-control" type="text" placeholder="Insira o nome de Usuário" />
+        <div class="invalid-feedback" *ngIf="f.userName?.hasError('required')">
+          Campo obrigatório.
+        </div>
       </div>
       <div class="form-row">
         <div class="form-group col-sm-6">
           <label for="">Senha:</label>
-          <input class="form-control" type="password" placeholder="Digite uma Senha" />
+          <input
+          [ngClass]="{'is-invalid': f.senha?.errors && f.senha?.touched}"
+          formControlName="senha" class="form-control" type="password" placeholder="Digite uma Senha" />
+          <div class="invalid-feedback" *ngIf="f.senha?.hasError('required')">
+            Campo obrigatório.
+          </div>
+          <div class="invalid-feedback" *ngIf="f.confirmeSenha?.hasError('minlength')">
+            Senha precisa de ter mais de 6 digitos
+          </div>
         </div>
         <div class="form-group col-sm-6">
           <label for="">Confirmar Senha:</label>
-          <input class="form-control" type="password" placeholder="Confirme a Senha" />
+          <input
+          [ngClass]="{'is-invalid': f.confirmeSenha?.errors && f.confirmeSenha?.touched}"
+          formControlName="confirmeSenha" class="form-control" type="password" placeholder="Confirme a Senha" />
+          <div class="invalid-feedback" *ngIf="f.confirmeSenha?.errors && f.confirmeSenha?.touched">
+            Confirme a senha.
+          </div>
         </div>
       </div>
       <div class="form-row p-1 mb-3">
@@ -49,7 +85,7 @@
       </div>
       <div class="form-row">
         <div class="form-group col-12">
-          <button class="btn btn-success btn-block px-5 " style="background-color: rgb(1, 153, 255);">
+          <button class="btn btn-success btn-block px-5 " style="background-color: rgb(1, 153, 255);" [disabled]="!form.valid">
             Registar
           </button>
         </div>

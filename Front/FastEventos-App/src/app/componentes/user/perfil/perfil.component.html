@@ -1,7 +1,7 @@
 <app-titulo [titulo]="'Perfil'"></app-titulo>
 
 <div class="card rounded shadow-sm">
-<form>
+<form [formGroup]="form">
 	<div class="row p-3">
 		<div class="col-lg-3 pt-1">
 			<div class="card mb-3">
@@ -45,7 +45,10 @@
 				</div>
 				<div class="form-group col">
 					<label>Título</label>
-					<select class="form-control">
+					<select class="form-control"
+          [ngClass]="{'is-invalid': f.titulo.errors && f.titulo.touched}"
+          formControlName="titulo"
+          >
 						<option value=""></option>
 						<option value="0">Não Quero</option>
 						<option value="Senhorita">Tecnólogo(a)</option>
@@ -56,34 +59,69 @@
 						<option value="Senhorita">Doutor(a)</option>
 						<option value="Senhorita">Pós Doc</option>
 					</select>
+          <div *ngIf="f.email.hasError('required')" class="invalid-feedback">
+            Campo Obrigatório
+          </div>
 				</div>
 				<div class="form-group col-sm-5">
 					<label>Primeiro Nome</label>
-					<input type="text" class="form-control"/>
+					<input type="text" class="form-control"
+          [ngClass]="{'is-invalid': f.primeiroNome.errors && f.primeiroNome.touched}"
+          formControlName="primeiroNome"/>
+          <div *ngIf="f.email.hasError('required')" class="invalid-feedback">
+            Campo Obrigatório
+          </div>
 
 				</div>
 				<div class="form-group col-sm-5">
 					<label>Último nome</label>
-					<input type="text" class="form-control"/>
+					<input type="text" class="form-control"
+          [ngClass]="{'is-invalid': f.ultimoNome.errors && f.ultimoNome.touched}"
+          formControlName="ultimoNome"
+          />
+          <div *ngIf="f.email.hasError('required')" class="invalid-feedback">
+            Campo Obrigatório
+          </div>
 
 				</div>
 			</div>
 			<div class="form-row">
 				<div class="form-group col-sm-5">
 					<label>E-mail</label>
-					<input type="text" class="form-control" />
+					<input type="text" class="form-control"
+          [ngClass]="{'is-invalid': f.email.errors && f.email.touched}"
+          formControlName="email"
+          />
+          <div *ngIf="f.email.hasError('required')" class="invalid-feedback">
+            Campo Obrigatório
+          </div>
+          <div *ngIf="f.email.hasError('email')" class="invalid-feedback">
+            Formato de email inválido
+          </div>
 				</div>
 				<div class="form-group col-sm-4">
 					<label>Telefone</label>
-					<input type="text" class="form-control" />
+					<input type="text" class="form-control"
+          [ngClass]="{'is-invalid': f.telefone.errors && f.telefone.touched}"
+          formControlName="telefone"
+          />
+          <div *ngIf="f.email.hasError('required')" class="invalid-feedback">
+            Campo Obrigatório
+          </div>
 				</div>
 				<div class="form-group col-sm">
 					<label>Função</label>
-					<select class="form-control">
+					<select class="form-control"
+          [ngClass]="{'is-invalid': f.funcao.errors && f.funcao.touched}"
+          formControlName="funcao"
+          >
 						<option value=""></option>
 						<option value="Participante">Participante</option>
 						<option value="Palestrante">Palestrante</option>
 					</select>
+          <div *ngIf="f.email.hasError('required')" class="invalid-feedback">
+            Campo Obrigatório
+          </div>
 				</div>
 				<form-group class="col-12">
 					<label>Descrição</label>
@@ -108,11 +146,11 @@
 	</div>
 	<div class="card-footer">
 		<div class="d-flex">
-			<button class="btn btn-outline-secondary me-auto border">
+			<button class="btn btn-outline-secondary me-auto border" (click)="resetForm()">
 				Cancelar Alteração
 			</button>
-			<button class="btn btn-success">
-				<span class="spinner-border spinner-border-sm me-1"></span>
+			<button class="btn btn-success" [disabled]="!form.valid">
+				<!-- <span class="spinner-border spinner-border-sm me-1"></span> -->
 				Salvar Alteração
 			</button>
 		</div>
